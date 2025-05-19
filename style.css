@@ -1,0 +1,109 @@
+* {
+    margin: 10px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: linear-gradient(#546d4f, #11220f);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    justify-content: space-evenly;
+    transition: 1050ms;
+}
+.logo {
+    width: 320px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.342));
+}
+
+.container {
+    background-color: #28352718;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    max-width: 620px;
+    min-width: none;
+    text-align: center;
+    box-shadow: 0 0 10px #1a1a1a;
+}
+.loginFormclass {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h2 {
+    margin-bottom: 15px;
+    color: #cccccc;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    background-color: #212722;
+    color: white;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #5a5a5a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 250ms ease;
+}
+#darkModeButton {
+    background-color: #5a5a5a38;
+    width: 150px;
+}
+
+button:hover {
+    background-color: #424242;
+    border-radius: 20px;
+}
+
+#welcomeMessage h2 {
+    color: #cccccc;
+    margin-bottom: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+.dark-mode {
+    background-image: linear-gradient(#1b3518, #000000);
+
+}
+
+/* responsive design  */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+    .logo {
+        width: 80%;
+    }
+    input, button {
+        width: 100%;
+        padding: 10px;
+    }
+}
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
