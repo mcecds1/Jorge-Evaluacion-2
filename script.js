@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// Cambiar el color de body al presionar el botón darkModeBotton aplicando la class dark-mode
+// Cambiar el color de body al presionar el botón darkModeBotton aplicando la class dark-mode qe cree en alla
 const darkModeButton = document.getElementById("darkModeButton");
 const body = document.body;
 darkModeButton.addEventListener("click", () => {
@@ -60,12 +60,12 @@ darkModeButton.addEventListener("click", () => {
 
 
 
-    // 1. Escuchar evento personalizado
+    
     document.addEventListener("usuario-autenticado", function () {
       console.log("Evento personalizado: usuario-autenticado recibido");
     });
 
-    // 2. Evitar propagación del evento click
+   
     const contenedor = document.getElementById("contenedor");
     const botonInterno = document.getElementById("interno");
 
@@ -74,16 +74,16 @@ darkModeButton.addEventListener("click", () => {
     });
 
     botonInterno.addEventListener("click", function (event) {
-      event.stopPropagation(); // ¡Clave!
+      event.stopPropagation(); 
       console.log("Click en el botón interno");
     });
 
-    // 3. Simular inicio de sesión
+    // 3. Simular inici
     document.getElementById("login").addEventListener("click", function () {
       const usuario = document.getElementById("usuario").value.trim();
 
       if (usuario) {
-        // Crear y despachar el evento personalizado
+       
         const evento = new CustomEvent("usuario-autenticado", {
           detail: { usuario: usuario }
         });
@@ -107,78 +107,4 @@ darkModeButton.addEventListener("click", () => {
 
 
 
-    document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("loginForm");
-    const usernameInput = document.getElementById("username");
-    const passwordInput = document.getElementById("password");
-    const welcomeSection = document.getElementById("welcomeMessage");
-    const welcomeText = document.getElementById("welcomeText");
-    const logoutBtn = document.getElementById("logoutBtn");
-
-    // Crear y añadir etiqueta de advertencia si no existe
-    let advertencia = document.createElement("p");
-    advertencia.id = "advertencia";
-    advertencia.style.color = "red";
-    form.appendChild(advertencia);
-
-    // 1. Evento personalizado
-    document.addEventListener("usuario-autenticado", function (e) {
-      console.log("Evento personalizado: usuario-autenticado recibido");
-    });
-
-    // 2. Formulario submit
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const username = usernameInput.value.trim();
-      const password = passwordInput.value.trim();
-
-      if (!username || !password) {
-        advertencia.textContent = "⚠️ Todos los campos son obligatorios.";
-        return;
-      }
-
-      if (password.length < 6) {
-        advertencia.textContent = "⚠️ La contraseña debe tener al menos 6 caracteres.";
-        return;
-      }
-
-      advertencia.textContent = ""; // Limpiar mensaje
-
-      // 3. Disparar evento personalizado
-      const evento = new CustomEvent("usuario-autenticado", {
-        detail: { usuario: username }
-      });
-      document.dispatchEvent(evento);
-
-      // 4. Ocultar formulario, mostrar bienvenida
-      form.classList.add("hidden");
-      welcomeText.textContent = `¡Bienvenido, ${username}!`;
-      welcomeSection.classList.remove("hidden");
-
-      // 5. Mostrar mensaje 3 segundos después
-      setTimeout(() => {
-        alert(`¡Gracias por iniciar sesión, ${username}!`);
-      }, 3000);
-    });
-
-    // 6. Logout
-    logoutBtn.addEventListener("click", function () {
-      welcomeSection.classList.add("hidden");
-      form.classList.remove("hidden");
-      usernameInput.value = "";
-      passwordInput.value = "";
-    });
-
-    // 7. stopPropagation en el contenedor
-    const contenedor1 = document.getElementById("contenedor1");
-    const botonInterno = document.getElementById("interno");
-
-    contenedor1.addEventListener("click", function () {
-      console.log("Click en el contenedor externo");
-    });
-
-    botonInterno.addEventListener("click", function (e) {
-      e.stopPropagation();
-      console.log("Click en el botón interno");
-    });
-  });
+    
